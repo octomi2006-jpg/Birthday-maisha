@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Maisha ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Loading -->
+
+<div id="loading">
+
+<h1>Loading Surprise...</h1>
+
+<div class="loader"></div>
+
+</div>
+
+<!-- Password -->
+
+<div id="login" class="hide">
+
+<div class="card">
+
+<h1>🎁 Secret Gift</h1>
+
+<p>Enter Password</p>
+
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="checkPassword()">Open Gift ❤️</button>
+
+<p id="error"></p>
+
+</div>
+
+</div>
+
+<!-- Website -->
+
+<div id="website" class="hide">
+
+<section class="hero">
+
+<h2>Happy Birthday 🎂</h2>
+
+<h1>Maisha Islam Nahar</h1>
+
+<p>01 June 2005</p>
+
+<button onclick="openGift()">🎁 Open Your Surprise</button>
+
+</section>
+
+<section id="giftSection" class="hide">
+
+<div class="gift">
+
+🎁
+
+</div>
+
+<h2>Tap The Gift</h2>
+
+</section>
+
+<section id="message" class="hide">
+
+<h1>Happy Birthday ❤️</h1>
+
+<p id="typing"></p>
+
+</section>
+
+<section class="gallery">
+
+<h2>Beautiful Memories 📸</h2>
+
+<div class="slider">
+
+<img src="images/photo1.jpg">
+
+<img src="images/photo2.jpg">
+
+<img src="images/photo3.jpg">
+
+<img src="images/photo4.jpg">
+
+<img src="images/photo5.jpg">
+
+</div>
+
+</section>
+
+<section class="age">
+
+<h2>Your Age</h2>
+
+<h1 id="age"></h1>
+
+</section>
+
+<section class="final">
+
+<h1>Forever Keep Smiling ❤️</h1>
+
+<p>
+
+Happy Birthday Maisha.
+
+May Allah bless you forever.
+
+Stay Happy.
+
+Stay Safe.
+
+Stay Blessed.
+
+</p>
+
+</section>
+
+<audio id="music" loop>
+
+<source src="music.mp3">
+
+</audio>
+
+<canvas id="canvas"></canvas>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(135deg,#ff5d8f,#ff8fb1,#ffd1dc);
+overflow-x:hidden;
+color:#fff;
+}
+
+.hide{
+display:none;
+}
+
+/* Loading */
+
+#loading{
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:#ff4d6d;
+}
+
+.loader{
+width:70px;
+height:70px;
+border:8px solid white;
+border-top:8px solid transparent;
+border-radius:50%;
+animation:spin 1s linear infinite;
+margin-top:20px;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
+/* Login */
+
+#login{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.card{
+width:350px;
+background:white;
+padding:30px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 20px 50px rgba(0,0,0,.3);
+color:#333;
+}
+
+.card input{
+width:100%;
+padding:15px;
+margin-top:20px;
+border:none;
+border-radius:15px;
+background:#eee;
+font-size:18px;
+}
+
+.card button{
+width:100%;
+padding:15px;
+margin-top:20px;
+border:none;
+border-radius:15px;
+background:#ff3d6e;
+color:white;
+font-size:18px;
+cursor:pointer;
+transition:.3s;
+}
+
+.card button:hover{
+transform:scale(1.05);
+}
+
+#error{
+margin-top:15px;
+color:red;
+font-weight:bold;
+}
+
+/* Hero */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:52px;
+text-shadow:0 0 20px white;
+}
+
+.hero h2{
+font-size:35px;
+}
+
+.hero p{
+margin:20px;
+font-size:22px;
+}
+
+.hero button{
+padding:15px 40px;
+border:none;
+border-radius:40px;
+font-size:20px;
+cursor:pointer;
+background:white;
+color:#ff3d6e;
+}
+
+/* Gift */
+
+#giftSection{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.gift{
+font-size:130px;
+animation:bounce 1.2s infinite;
+cursor:pointer;
+}
+
+@keyframes bounce{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+}
+
+/* Message */
+
+#message{
+padding:100px 20px;
+text-align:center;
+}
+
+#message h1{
+font-size:45px;
+margin-bottom:30px;
+}
+
+#typing{
+font-size:22px;
+line-height:40px;
+max-width:800px;
+margin:auto;
+}
+
+/* Gallery */
+
+.gallery{
+padding:80px 20px;
+text-align:center;
+}
+
+.gallery h2{
+font-size:40px;
+margin-bottom:30px;
+}
+
+.slider{
+display:flex;
+gap:20px;
+overflow-x:auto;
+padding-bottom:20px;
+scroll-snap-type:x mandatory;
+}
+
+.slider img{
+width:260px;
+height:360px;
+object-fit:cover;
+border-radius:25px;
+border:5px solid white;
+scroll-snap-align:center;
+}
+
+/* Age */
+
+.age{
+padding:100px 20px;
+text-align:center;
+}
+
+.age h1{
+font-size:60px;
+margin-top:20px;
+}
+
+/* Final */
+
+.final{
+padding:120px 20px;
+text-align:center;
+}
+
+.final h1{
+font-size:45px;
+margin-bottom:30px;
+}
+
+.final p{
+font-size:22px;
+line-height:40px;
+max-width:700px;
+margin:auto;
+}
+
+/* Canvas */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+}
+
+/* Floating Hearts */
+
+body::before{
+content:"❤️ 💖 💕 💗 💞";
+position:fixed;
+font-size:30px;
+left:0;
+bottom:-50px;
+width:100%;
+animation:hearts 12s linear infinite;
+opacity:.6;
+pointer-events:none;
+}
+
+@keyframes hearts{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(-120vh);
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:34px;
+}
+
+.hero h2{
+font-size:25px;
+}
+
+.gallery h2,
+.final h1,
+#message h1{
+font-size:30px;
+}
+
+.slider img{
+width:220px;
+height:300px;
+}
+
+#typing,
+.final p{
+font-size:18px;
+line-height:32px;
+}
+
+.age h1{
+font-size:40px;
+}
+
+.card{
+width:90%;
+}
+
+}
+// ===============================
+// Premium Birthday Website Script
+// ===============================
+
+// Loading Screen
+window.onload = function () {
+    setTimeout(() => {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("login").classList.remove("hide");
+    }, 3000);
+};
+
+// Password
+function checkPassword() {
+    const pass = document.getElementById("password").value;
+
+    if (pass === "2026") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("website").classList.remove("hide");
+
+        const music = document.getElementById("music");
+        music.play().catch(() => {});
+
+        showAge();
+        typeLetter();
+        startConfetti();
+
+    } else {
+        document.getElementById("error").innerHTML = "❌ Wrong Password!";
+    }
+}
+
+// Gift Button
+function openGift() {
+    document.getElementById("giftSection").classList.remove("hide");
+
+    setTimeout(() => {
+        document.getElementById("message").classList.remove("hide");
+        document.getElementById("message").scrollIntoView({
+            behavior: "smooth"
+        });
+    }, 1500);
+}
+
+// Love Letter
+const letter = `Dear Maisha,
+
+Happy Birthday to the most beautiful soul.
+
+May Allah bless you with endless happiness,
+good health, peace and success.
+
+I hope every dream in your heart comes true.
+
+Your smile is precious,
+and I pray that you always keep smiling.
+
+Thank you for being such a wonderful person.
+
+Happy Birthday once again ❤️`;
+
+let index = 0;
+
+function typeLetter() {
+
+    if (index < letter.length) {
+
+        document.getElementById("typing").innerHTML += letter.charAt(index);
+
+        index++;
+
+        setTimeout(typeLetter, 40);
+
+    }
+
+}
+
+// Age Counter
+function showAge() {
+
+    const birth = new Date("2005-06-01");
+
+    const today = new Date();
+
+    let age = today.getFullYear() - birth.getFullYear();
+
+    const month = today.getMonth() - birth.getMonth();
+
+    if (month < 0 || (month === 0 && today.getDate() < birth.getDate())) {
+
+        age--;
+
+    }
+
+    document.getElementById("age").innerHTML = age + " Years Old 🎂";
+
+}
+
+// Simple Confetti
+function startConfetti() {
+
+    const canvas = document.getElementById("canvas");
+
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+
+    canvas.height = window.innerHeight;
+
+    const dots = [];
+
+    for (let i = 0; i < 180; i++) {
+
+        dots.push({
+
+            x: Math.random() * canvas.width,
+
+            y: Math.random() * canvas.height,
+
+            r: Math.random() * 5 + 2,
+
+            speed: Math.random() * 3 + 1
+
+        });
+
+    }
+
+    function animate() {
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "white";
+
+        dots.forEach(dot => {
+
+            ctx.beginPath();
+
+            ctx.arc(dot.x, dot.y, dot.r, 0, Math.PI * 2);
+
+            ctx.fill();
+
+            dot.y += dot.speed;
+
+            if (dot.y > canvas.height) {
+
+                dot.y = -10;
+
+                dot.x = Math.random() * canvas.width;
+
+            }
+
+        });
+
+        requestAnimationFrame(animate);
+
+    }
+
+    animate();
+
+}
+
+// Resize
+window.addEventListener("resize", () => {
+
+    const canvas = document.getElementById("canvas");
+
+    canvas.width = window.innerWidth;
+
+    canvas.height = window.innerHeight;
+
+});
